@@ -1,0 +1,28 @@
+.App {
+  text-align: center;
+}
+
+.navbar {
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: rgba(253, 158, 136, 0.2);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(209, 213, 219, 0.3);
+  padding-top: 15px;
+  padding-bottom: 7px;
+  min-height: 10vh;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  position: sticky;
+  top: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.hideNav {
+  background-color: rgba(253, 158, 136, 0.01);
+  backdrop-filter: blur(8px) saturate(180%);
+  -webkit-backdrop-filter: blur(8px) saturate(180%);
+  border: 1px solid rgba(209, 213, 219, 0.3);
+}
+
