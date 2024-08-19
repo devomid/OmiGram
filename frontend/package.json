@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  "proxy": "http://localhost:3001",
+  "proxy": "REACT_APP_API_KEY = "809cd4f5bc6c49e9acabc89b50dd6682"",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
