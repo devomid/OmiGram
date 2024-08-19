@@ -6,7 +6,7 @@ export const useAvatarSend = () => {
   const { dispatch } = useAuthContext();
   const avatarSend = async (formData) => {
     try {
-      const response = await fetch('http://localhost:3001/user/auth/signup/avatar', {
+      const response = await fetch('https://omigramapi.onrender.com/user/auth/signup/avatar', {
         method: 'POST',
         body: formData
       });
@@ -16,9 +16,9 @@ export const useAvatarSend = () => {
         const user = jsonRes.user
         localStorage.setItem('userAvatar', JSON.stringify(user));
         dispatch({
-        type: 'UPDATE_USER',
-        payload: user
-      });
+          type: 'UPDATE_USER',
+          payload: user
+        });
 
         navigate('/')
         console.log('user in avatar hook:', user);
@@ -35,5 +35,5 @@ export const useAvatarSend = () => {
 
 
 
-  
+
 

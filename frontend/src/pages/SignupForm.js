@@ -45,7 +45,7 @@ const SignupForm = () => {
   };
 
   const google = () => {
-    window.open('http://localhost:3001/user/auth/google', '_self')
+    window.open('https://omigramapi.onrender.com/user/auth/google', '_self')
   };
 
 

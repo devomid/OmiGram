@@ -4,7 +4,7 @@ import React from 'react';
 const SignupAccountInfo = ({ inputData, setInputData, values, errors, touched, handleBlur, handleChange }) => {
 
   const google = () => {
-    window.open('http://localhost:3001/user/auth/google', '_self')
+    window.open('https://omigramapi.onrender.com/user/auth/google', '_self')
   };
 
   return (

@@ -6,11 +6,11 @@ export const useLogin = () => {
   const login = async (username, password) => {
     // console.log('sign in');
     try {
-      const response = await fetch('http://localhost:3001/user/auth/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password })
-    })
+      const response = await fetch('https://omigramapi.onrender.com/user/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password })
+      })
       const jsonResponse = await response.json();
       // console.log(jsonResponse);
 

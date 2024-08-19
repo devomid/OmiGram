@@ -22,7 +22,7 @@ const LoginForm = () => {
   };
 
   const google = () => {
-    window.open('http://localhost:3001/user/auth/google', '_self')
+    window.open('https://omigramapi.onrender.com/user/auth/google', '_self')
   };
 
   const { values, errors, touched, isSubmitting, handleSubmit, handleBlur, handleChange } = useFormik({

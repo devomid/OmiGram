@@ -1,6 +1,6 @@
 import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import {AuthContext} from '../contexts/AuthContext'
+import { AuthContext } from '../contexts/AuthContext'
 
 const Success = () => {
   const [user, setUser] = useState(null);
@@ -8,15 +8,15 @@ const Success = () => {
   const navigate = useNavigate();
 
   const getUser = async () => {
-    const response = await fetch('http://localhost:3001/user/auth/google/success', {
+    const response = await fetch('https://omigramapi.onrender.com/user/auth/google/success', {
       method: 'GET',
       mode: 'cors',
       credentials: 'include',
       headers: {
         Accept:
           'application/json',
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Credentials': true,
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Credentials': true,
       }
     });
     const data = await response.json();
@@ -36,15 +36,15 @@ const Success = () => {
 
 
   useEffect(() => {
-     if (user !== null) {
-       if (user.user.phoneNumber === 999999999) {
-         navigate('/user/auth/google/googleComplete');
-       }
-       else if (user.user.phoneNumber !== 999999999) {
-         navigate('/');
-       }
-     }
-   }, [user, navigate]);
+    if (user !== null) {
+      if (user.user.phoneNumber === 999999999) {
+        navigate('/user/auth/google/googleComplete');
+      }
+      else if (user.user.phoneNumber !== 999999999) {
+        navigate('/');
+      }
+    }
+  }, [user, navigate]);
 }
- 
+
 export default Success;
