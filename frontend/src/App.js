@@ -68,19 +68,19 @@ function App() {
   });
 
   const getLocation = () => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        setLat(position.coords.latitude);
-        setLon(position.coords.longitude);
-        // console.log(position);
-      },
-      (error) => {
-        console.error('Error getting geolocation:', error);
-        console.error('Error getting geolocation:', error);
-        console.log('Error code:', error.code);
-        console.log('Error message:', error.message);
-      }
-    );
+    // navigator.geolocation.getCurrentPosition(
+    //   (position) => {
+    //     setLat(position.coords.latitude);
+    //     setLon(position.coords.longitude);
+    //     // console.log(position);
+    //   },
+    //   (error) => {
+    //     console.error('Error getting geolocation:', error);
+    //     console.error('Error getting geolocation:', error);
+    //     console.log('Error code:', error.code);
+    //     console.log('Error message:', error.message);
+    //   }
+    // );
   };
 
   const getSun = async () => {
