@@ -10,7 +10,6 @@ const createToken = function (_id) {
 };
 
 const signupUser = async (req, res) => {
-  // console.log('begining of controller');
 
   const {
     username,
@@ -22,14 +21,6 @@ const signupUser = async (req, res) => {
     birthDate,
     phoneNumber,
   } = req.body;
-
-  // console.log('email in signup function:', email);
-  // console.log('first name in signup function:', firstName);
-  // console.log('last name in signup function:', lastName);
-  // console.log('username in signup function:', username);
-  // console.log('password in signup function:', password);
-  // console.log('birth in signup function:', birthDate);
-  // console.log('phone in signup function:', phoneNumber);
 
   try {
     const usernameExists = await UserModel.findOne({ username });
