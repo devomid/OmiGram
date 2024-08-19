@@ -12,7 +12,7 @@ export const useLogin = () => {
         body: JSON.stringify({ username, password })
       })
       const jsonResponse = await response.json();
-      // console.log(jsonResponse);
+      console.log(jsonResponse);
 
       if (response.ok) {
         const user = jsonResponse.user;
