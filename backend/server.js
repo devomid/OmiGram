@@ -33,7 +33,7 @@ const server = http.createServer(app);
 const io = new Server(server, {
   pingTimeout: 60000,
   cors: {
-    origin: 'http://localhost:3000',
+    origin: 'https://omigram.onrender.com',
     methods: ['GET', 'POST', 'DELETE', 'PATCH']
   }
 });
@@ -52,7 +52,7 @@ app.use(bodyParser.json({ limit: '50mb' }));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 app.use(cors({
   credentials: true,
-  origin: 'http://localhost:3000',
+  origin: 'https://omigram.onrender.com',
   methods: ['GET', 'POST', 'DELETE', 'PATCH'],
 }));
 
