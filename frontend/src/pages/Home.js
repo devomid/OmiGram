@@ -82,7 +82,7 @@ const Home = () => {
       }
     };
     try {
-      const { data } = await axios.get('home/posts', config)
+      const { data } = await axios.get('https://omigramapi.onrender.com/home/posts', config)
       if (data) setFriendsPosts(data.friendsPosts[0]);
     } catch (error) {
       console.log(error);
