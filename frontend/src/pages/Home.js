@@ -153,7 +153,7 @@ const Home = () => {
                 <Typography>My Friends</Typography>
               </Box>
               <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', mt: 7, ml: 1, mb: 0.8, minHeight: '40%', overflow: 'auto', scrollbarWidth: "none", '&::-webkit-scrollbar': { display: 'none' }, '&-ms-overflow-style:': { display: 'none' } }}>
-                {isLoading || !friends ? (<LastRecentUsers />) : (friends && friends.length > 0 ? friends.map((friend) => (<UserListItem user={friend} key={friend._id} />)) : (<Typography>No friends found.</Typography>))}
+                {isLoading || !friends ? (<LastRecentUsers />) : (friends && friends.length > 0 ? friends.map((friend) => (<UserListItem user={friend} key={friend._id} />)) : (<Typography sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white' }}>No friends found.</Typography>))}
                 {/* </Stack> */}
               </Box>
             </Box>
