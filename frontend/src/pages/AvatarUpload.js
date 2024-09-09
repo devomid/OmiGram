@@ -4,23 +4,23 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAvatarSend } from '../hooks/useAvatarSend.js';
 
-const AvatarUploadForm = ({ avatarOpen, setAvatarOpen }) => {
+const AvatarUploadForm = ({ avatarOpen, setAvatarOpen, email }) => {
   const { avatarSend } = useAvatarSend();
   const [avatar, setAvatar] = useState(null);
   const navigate = useNavigate();
 
   const onSubmit = async () => {
 
-    const localStorageObj = localStorage.getItem('user');
-    const localStorageUser = JSON.parse(localStorageObj);
-    const newUserObj = localStorageUser.user
-    const userEmail = newUserObj.email
-
     const formData = new FormData();
+
     formData.append('avatar', avatar);
-    formData.append('userEmail', userEmail);
+    formData.append('userEmail', email);
 
     await avatarSend(formData);
+
+    setAvatarOpen(false);
+    
+    navigate('/');
   };
 
   const skip = () => {

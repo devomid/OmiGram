@@ -41,7 +41,8 @@ const SignupForm = () => {
 
     await signup(values.username, values.email, values.password, values.firstName, values.lastName, values.birthDate, values.phoneNumber);
     actions.resetForm();
-    navigate('/user/auth/signup/avatar');
+    navigate('/home');
+    setAvatarOpen(true);
   };
 
   const google = () => {
@@ -66,7 +67,6 @@ const SignupForm = () => {
 
   const submitAndAvatar = async () => {
     await handleSubmit;
-    // setAvatarOpen(true);
 
   }
 
@@ -114,7 +114,7 @@ const SignupForm = () => {
           </Box> */}
         </Sheet>
       </Modal>
-      <AvatarUploadForm avatarOpen={avatarOpen} setAvatarOpen={setAvatarOpen} />
+      <AvatarUploadForm avatarOpen={avatarOpen} setAvatarOpen={setAvatarOpen} email={values.email} />
     </Box>
   )
 }
