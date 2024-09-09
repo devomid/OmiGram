@@ -19,8 +19,8 @@ const AvatarUploadForm = ({ avatarOpen, setAvatarOpen, email }) => {
     await avatarSend(formData);
 
     setAvatarOpen(false);
-    
-    navigate('/');
+
+    navigate('/home');
   };
 
   const skip = () => {

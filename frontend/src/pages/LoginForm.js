@@ -15,10 +15,10 @@ const LoginForm = () => {
 
   const onSubmit = async (values, actions) => {
     await login('values.username', values.password);
-    // actions.resetForm();
-    // navigate(`/home`);
-    // setOpen(false);
-    // window.location.reload()
+    actions.resetForm();
+    navigate(`/home`);
+    setOpen(false);
+    window.location.reload()
     console.log('hi');
   };
 

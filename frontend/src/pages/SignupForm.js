@@ -12,7 +12,8 @@ import AvatarUploadForm from './AvatarUpload.js';
 const SignupForm = () => {
   const [page, setPage] = useState(0);
   const [avatarOpen, setAvatarOpen] = useState(false);
-  const FormTitles = ['Personal Info', 'Account Info', 'Password']
+  const FormTitles = ['Personal Info', 'Account Info', 'Password'];
+  const [open, setOpen] = useState(true);
   const { signup } = useSignup();
   const navigate = useNavigate();
   const [inputData, setInputData] = useState({
@@ -42,13 +43,9 @@ const SignupForm = () => {
     await signup(values.username, values.email, values.password, values.firstName, values.lastName, values.birthDate, values.phoneNumber);
     actions.resetForm();
     navigate('/home');
+    setOpen(false)
     setAvatarOpen(true);
   };
-
-  const google = () => {
-    window.open('https://omigramapi.onrender.com/user/auth/google', '_self')
-  };
-
 
   const { values, errors, touched, isSubmitting, handleSubmit, handleBlur, handleChange } = useFormik({
     initialValues: {
@@ -65,14 +62,9 @@ const SignupForm = () => {
     onSubmit
   });
 
-  const submitAndAvatar = async () => {
-    await handleSubmit;
-
-  }
-
   return (
     <Box>
-      <Modal aria-labelledby="modal-title" aria-describedby="modal-desc" open={/* open */ true} /* onClose={() => setOpen(false)} */ sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
+      <Modal aria-labelledby="modal-title" aria-describedby="modal-desc" open={open} onClose={() => setOpen(false)} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} >
 
         <Sheet variant="solid" sx={{ width: 350, height: 620, maxWidth: 500, borderRadius: 'lg', p: 3, boxShadow: 'lg', backgroundColor: 'rgba(255, 255, 255, 0.2)', backdropFilter: 'blur(20px) saturate(180%)', border: '1px solid rgba(50, 50, 50, 0.3)' }}>
           <Box>
