@@ -42,9 +42,9 @@ const SignupForm = () => {
 
     await signup(values.username, values.email, values.password, values.firstName, values.lastName, values.birthDate, values.phoneNumber);
     actions.resetForm();
-    navigate('/home');
     setOpen(false)
     setAvatarOpen(true);
+    navigate('/home');
   };
 
   const { values, errors, touched, isSubmitting, handleSubmit, handleBlur, handleChange } = useFormik({

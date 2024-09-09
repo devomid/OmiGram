@@ -14,11 +14,11 @@ const LoginForm = () => {
   const { login } = useLogin();
 
   const onSubmit = async (values, actions) => {
-    await login('values.username', values.password);
+    await login(values.username, values.password);
     actions.resetForm();
-    navigate(`/home`);
     setOpen(false);
-    window.location.reload()
+    navigate(`/home`);
+    // window.location.reload()
     console.log('hi');
   };
 
