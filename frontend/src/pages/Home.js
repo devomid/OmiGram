@@ -153,7 +153,7 @@ const Home = () => {
                 <Typography>My Friends</Typography>
               </Box>
               <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', mt: 7, ml: 1, mb: 0.8, minHeight: '40%', overflow: 'auto', scrollbarWidth: "none", '&::-webkit-scrollbar': { display: 'none' }, '&-ms-overflow-style:': { display: 'none' } }}>
-                {isLoading || !friends ? (<LastRecentUsers />) : (friends && friends.length > 0 ? friends.map((friend) => (<UserListItem user={friend} key={friend._id} />)) : (<Typography sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white' }}>No friends found.</Typography>))}
+                {isLoading || !friends ? (<LastRecentUsers />) : (friends && friends.length > 0 ? friends.map((friend) => (<UserListItem user={friend} key={friend._id} />)) : (<Stack sx={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Typography>You have no friends yet</Typography></Stack>))}
                 {/* </Stack> */}
               </Box>
             </Box>
@@ -164,8 +164,8 @@ const Home = () => {
           <Box sx={{ width: '100%' }}>
             <Stack sx={{ width: '100%', p: 1 }} direction="column" justifyContent="flex-start" alignItems="stretch" spacing={1}>
               <Box sx={{ minHeight: '60%' }}>
-                {isLoading ? (<Feeds />) : (friendsPosts && friendsPosts.length > 0 && friendsPosts.map((friendspost) => <PostListItem key={friendspost._id} profileOwner={profileOwner} post={friendspost} />))}
-                {!friendsPosts ? (<Typography>No Post to show</Typography>) : (friendsPosts && friendsPosts.length > 0 && friendsPosts.map((friendspost) => <PostListItem key={friendspost._id} profileOwner={profileOwner} post={friendspost} />))}
+                {isLoading || !friendsPosts ? (<Feeds />) : (friendsPosts && friendsPosts.length > 0 && friendsPosts.map((friendspost) => <PostListItem key={friendspost._id} profileOwner={profileOwner} post={friendspost} />))}
+                {friendsPosts && friendsPosts.length <= 0 && <Stack sx={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Typography>You have no posts yet</Typography></Stack>}
               </Box>
             </Stack>
           </Box>
