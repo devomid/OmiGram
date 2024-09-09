@@ -164,8 +164,8 @@ const Home = () => {
           <Box sx={{ width: '100%' }}>
             <Stack sx={{ width: '100%', p: 1 }} direction="column" justifyContent="flex-start" alignItems="stretch" spacing={1}>
               <Box sx={{ minHeight: '60%' }}>
-                {/* {isLoading || !friendsPosts ? (<Feeds />) : (friendsPosts && friendsPosts.length > 0 && friendsPosts.map((friendspost) => <PostListItem key={friendspost._id} profileOwner={profileOwner} post={friendspost} />))} */}
-                {/* {isLoading || !friendsPosts ? (<Feeds />) : (friendsPosts && friendsPosts.length > 0 ? friendsPosts.map((friendspost) => (<PostListItem key={friendspost._id} />)) : (<Typography>No posts found.</Typography>))} */}
+                {isLoading ? (<Feeds />) : (friendsPosts && friendsPosts.length > 0 && friendsPosts.map((friendspost) => <PostListItem key={friendspost._id} profileOwner={profileOwner} post={friendspost} />))}
+                {!friendsPosts ? (<Typography>No Post to show</Typography>) : (friendsPosts && friendsPosts.length > 0 && friendsPosts.map((friendspost) => <PostListItem key={friendspost._id} profileOwner={profileOwner} post={friendspost} />))}
               </Box>
             </Stack>
           </Box>
