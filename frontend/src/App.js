@@ -214,7 +214,7 @@ function App() {
           <nav className={hideNav ? 'navbar hideNav' : 'navbar'} style={{ zIndex: 1 }}><Navbar /* socket={socket} */ /></nav>
           <div className="pages">
             <Routes>
-              <Route path='/' element={user ? <Navigate to="user/auth/login" /> : <Navigate to='/home' />} />
+              <Route path='/' element={!user ? <Navigate to="user/auth/login" /> : <Navigate to='/home' />} />
               <Route path='/' element={user && user.phoneNumber !== 999999999 ? <Navigate to='/home' /> : <Navigate to="user/auth/google/googleComplete" />} />
               <Route path='user/auth/login' element={!user ? <LoginForm /> : <Navigate to='/home' />} />
               {/* <Route path='user/auth/signup/avatar' element={user ? <AvatarUploadForm /> : <Navigate to='user/auth/login' />} /> */}

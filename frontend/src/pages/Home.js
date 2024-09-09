@@ -83,7 +83,7 @@ const Home = () => {
     };
     try {
       const { data } = await axios.get('home/posts', config)
-      setFriendsPosts(data.friendsPosts[0]);
+      if (data) setFriendsPosts(data.friendsPosts[0]);
     } catch (error) {
       console.log(error);
     }
@@ -144,8 +144,8 @@ const Home = () => {
                 <Typography>My Posts</Typography>
               </Box>
               <Box sx={{ mt: 7, mb: 0.8 }} >
-                {isLoading ? (<LastRecentPosts />) : (posts.length > 0 && posts.map((post) => <PostListItemSmall key={post._id} profileOwner={profileOwner} post={post} />))}
-                {posts.length <= 0 && <Stack sx={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Typography>You have no posts yet</Typography></Stack>}
+                {isLoading || !posts ? (<LastRecentPosts />) : (posts && posts.length > 0 && posts.map((post) => <PostListItemSmall key={post._id} profileOwner={profileOwner} post={post} />))}
+                {posts && posts.length <= 0 && <Stack sx={{ height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Typography>You have no posts yet</Typography></Stack>}
               </Box>
             </Box>
             <Box sx={{ width: '100%', height: '50%', display: { xs: 'none', sm: 'none', md: 'flex' } }}>
@@ -153,10 +153,10 @@ const Home = () => {
                 <Typography>My Friends</Typography>
               </Box>
               <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', mt: 7, ml: 1, mb: 0.8, minHeight: '40%', overflow: 'auto', scrollbarWidth: "none", '&::-webkit-scrollbar': { display: 'none' }, '&-ms-overflow-style:': { display: 'none' } }}>
-                {isLoading ? (<LastRecentUsers />) : (friends.map((friend) => <UserListItem user={friend} key={friend._id} />))}
+                {isLoading || !friends ? (<LastRecentUsers />) : friends && friends.length > 0 ? (friends.map((friend) => (<UserListItem user={friend} key={friend._id} />))) : (<p>No friends found.</p>)}
+                {/* </Stack> */}
               </Box>
             </Box>
-            {/* </Stack> */}
           </Box>
         </Grid>
 
@@ -164,7 +164,7 @@ const Home = () => {
           <Box sx={{ width: '100%' }}>
             <Stack sx={{ width: '100%', p: 1 }} direction="column" justifyContent="flex-start" alignItems="stretch" spacing={1}>
               <Box sx={{ minHeight: '60%' }}>
-                {isLoading ? (<Feeds />) : (friendsPosts && friendsPosts.length > 0 && friendsPosts.map((friendspost) => <PostListItem key={friendspost._id} profileOwner={profileOwner} post={friendspost} />))}
+                {isLoading || !friendsPosts ? (<Feeds />) : (friendsPosts && friendsPosts.length > 0 && friendsPosts.map((friendspost) => <PostListItem key={friendspost._id} profileOwner={profileOwner} post={friendspost} />))}
               </Box>
             </Stack>
           </Box>
