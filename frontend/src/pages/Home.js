@@ -153,7 +153,7 @@ const Home = () => {
                 <Typography>My Friends</Typography>
               </Box>
               <Box sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', mt: 7, ml: 1, mb: 0.8, minHeight: '40%', overflow: 'auto', scrollbarWidth: "none", '&::-webkit-scrollbar': { display: 'none' }, '&-ms-overflow-style:': { display: 'none' } }}>
-                {isLoading || !friends ? (<LastRecentUsers />) : (friends && friends.length > 0 ? friends.map((friend) => (<UserListItem user={friend} key={friend._id} />)) : (<p>No friends found.</p>))}
+                {isLoading || !friends ? (<LastRecentUsers />) : (friends && friends.length > 0 ? friends.map((friend) => (<UserListItem user={friend} key={friend._id} />)) : (<Typography>No friends found.</Typography>))}
                 {/* </Stack> */}
               </Box>
             </Box>
@@ -165,7 +165,7 @@ const Home = () => {
             <Stack sx={{ width: '100%', p: 1 }} direction="column" justifyContent="flex-start" alignItems="stretch" spacing={1}>
               <Box sx={{ minHeight: '60%' }}>
                 {/* {isLoading || !friendsPosts ? (<Feeds />) : (friendsPosts && friendsPosts.length > 0 && friendsPosts.map((friendspost) => <PostListItem key={friendspost._id} profileOwner={profileOwner} post={friendspost} />))} */}
-                {isLoading || !friendsPosts ? (<Feeds />) : (friendsPosts && friendsPosts.length > 0 ? friendsPosts.map((friendspost) => (<PostListItem key={friendspost._id} />)) : (<p>No posts found.</p>))}
+                {isLoading || !friendsPosts ? (<Feeds />) : (friendsPosts && friendsPosts.length > 0 ? friendsPosts.map((friendspost) => (<PostListItem key={friendspost._id} />)) : (<Typography>No posts found.</Typography>))}
               </Box>
             </Stack>
           </Box>
