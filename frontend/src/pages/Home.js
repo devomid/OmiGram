@@ -32,7 +32,7 @@ const Home = () => {
       }
     };
     try {
-      const { data } = await axios.get('/home', config)
+      const { data } = await axios.get('https://omigramapi.onrender.com/home', config)
       setFriends(data)
     } catch (error) {
       console.log(error)
@@ -57,7 +57,7 @@ const Home = () => {
       }
     }
     try {
-      const { data } = await axios.get(`/posts/${username}`, config)
+      const { data } = await axios.get(`https://omigramapi.onrender.com/posts/${username}`, config)
       setProfileOwner(data.user);
       setPosts(data.userPosts);
     } catch (error) {

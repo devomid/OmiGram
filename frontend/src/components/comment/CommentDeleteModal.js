@@ -10,7 +10,7 @@ const CommentDeleteModal = ({ comment, commentDeleteModalOpen, setCommentDeleteM
 
   const handleDelete = async () => {
     setIsLoading(true)
-    const response = await fetch(`/posts/${comment._id}`, {
+    const response = await fetch(`https://omigramapi.onrender.com/posts/${comment._id}`, {
       headers: {
         'Authorization': `Bearer ${user.token}`
       },

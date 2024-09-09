@@ -5,7 +5,7 @@ export const useUnlike = () => {
   const unlikeAPost = async (postId) => {
 
     try {
-      const response = await fetch(`/posts/unlike/${postId}`, {
+      const response = await fetch(`https://omigramapi.onrender.com/posts/unlike/${postId}`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'

@@ -33,7 +33,7 @@ const Profile = () => {
         Authorization: `Bearer ${user.token}`
       }
     };
-    const { data } = await axios.get('/home', config)
+    const { data } = await axios.get('https://omigramapi.onrender.com/home', config)
     setFriends(data)
     friends.map((friend => console.log(friend.username)))
   }
@@ -52,7 +52,7 @@ const Profile = () => {
         'Content-Type': 'application/json'
       }
     }
-    const { data } = await axios.get(`/posts/${username}`, config)
+    const { data } = await axios.get(`https://omigramapi.onrender.com/posts/${username}`, config)
     setProfileOwner(data.user);
     setPosts(data.userPosts)
   }

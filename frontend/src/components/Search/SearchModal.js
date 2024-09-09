@@ -34,7 +34,7 @@ const SearchModal = ({ searchModal, setSearchModal }) => {
             'Content-Type': 'application/json'
           }
         };
-        const { data } = await axios.get(`/user/search?search=${search}`, config);
+        const { data } = await axios.get(`https://omigramapi.onrender.com/user/search?search=${search}`, config);
         if (data.length < 1) {
           setIsLoading(false);
           setErrorOpen(true);

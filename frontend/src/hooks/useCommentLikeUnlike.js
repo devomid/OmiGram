@@ -4,7 +4,7 @@ export const useCommentLikeUnlike = () => {
 
   const likeAComment = async (commentId) => {
     try {
-      const response = await fetch(`/comments/like/${commentId}`, {
+      const response = await fetch(`https://omigramapi.onrender.com/comments/like/${commentId}`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ export const useCommentLikeUnlike = () => {
   const unlikeAComment = async (commentId) => {
 
     try {
-      const response = await fetch(`/comments/unlike/${commentId}`, {
+      const response = await fetch(`https://omigramapi.onrender.com/comments/unlike/${commentId}`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'

@@ -4,7 +4,7 @@ export const useReplyLikeAndUnlike = () => {
 
   const likeAReply = async (replyId) => {
     try {
-      const response = await fetch(`/comments/reply/like/${replyId}`, {
+      const response = await fetch(`https://omigramapi.onrender.com/comments/reply/like/${replyId}`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'
@@ -26,7 +26,7 @@ export const useReplyLikeAndUnlike = () => {
   const unlikeAReply = async (replyId) => {
 
     try {
-      const response = await fetch(`/comments/reply/unlike/${replyId}`, {
+      const response = await fetch(`https://omigramapi.onrender.com/comments/reply/unlike/${replyId}`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'

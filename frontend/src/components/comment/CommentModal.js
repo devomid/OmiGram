@@ -41,7 +41,7 @@ const CommentModal = ({ post, commentModalOpen, setCommentModalOpen }) => {
       }
     };
     try {
-      const { data } = await axios.get(`/comments/${post._id}`, config);
+      const { data } = await axios.get(`https://omigramapi.onrender.com/comments/${post._id}`, config);
       setComments((prevComments) => ({
         ...prevComments,
         [post._id]: data
@@ -63,7 +63,7 @@ const CommentModal = ({ post, commentModalOpen, setCommentModalOpen }) => {
       }
     };
     try {
-      const { data } = await axios.post(`/comments/newcmnt`, {
+      const { data } = await axios.post(`https://omigramapi.onrender.com/comments/newcmnt`, {
         post: post._id,
         writer: user.user._id,
         commentBody
@@ -88,7 +88,7 @@ const CommentModal = ({ post, commentModalOpen, setCommentModalOpen }) => {
       }
     };
     try {
-      const { data } = await axios.post(`/comments/reply/${commentId}`, {
+      const { data } = await axios.post(`https://omigramapi.onrender.com/comments/reply/${commentId}`, {
         post: post._id,
         replyBody: commentBody,
         parentReply,

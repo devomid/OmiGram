@@ -5,7 +5,7 @@ export const useLike = () => {
   const likeAPost = async (postId) => {
     console.log(user);
     try {
-      const response = await fetch(`/posts/like/${postId}`, {
+      const response = await fetch(`https://omigramapi.onrender.com/posts/like/${postId}`, {
         headers: {
           'Authorization': `Bearer ${user.token}`,
           'Content-Type': 'application/json'

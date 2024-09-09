@@ -17,7 +17,7 @@ const MessageRecents = ({ setPageIndicator, pageIndicator }) => {
           Authorization: `Bearer ${user.token}`
         }
       };
-      const { data } = await axios.get('/chats', config);
+      const { data } = await axios.get('https://omigramapi.onrender.com/chats', config);
       setChats(data);
     } catch (error) {
       //snack for no chat

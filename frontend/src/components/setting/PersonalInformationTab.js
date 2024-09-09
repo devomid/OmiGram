@@ -22,7 +22,7 @@ const PersonalInformationTab = ({ setSettingModalOpen }) => {
           Authorization: `Bearer ${user.token}`
         }
       };
-      const { data } = await axios.patch(`/user/profile/setting/${user.user._id}`, {
+      const { data } = await axios.patch(`https://omigramapi.onrender.com/user/profile/setting/${user.user._id}`, {
         firstName: values.firstName,
         lastName: values.lastName,
         birthDate: values.birthDate,

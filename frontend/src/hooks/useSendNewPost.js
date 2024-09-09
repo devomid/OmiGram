@@ -5,7 +5,7 @@ export const useSendNewPost = () => {
 
   const sendNewPost = async (formData) => {
     try {
-      const response = await fetch('/posts/', {
+      const response = await fetch('https://omigramapi.onrender.com/posts/', {
         headers: {
           'Authorization': `Bearer ${user.token}`
         },

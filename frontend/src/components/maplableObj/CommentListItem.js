@@ -40,7 +40,7 @@ const CommentListItem = ({ post, comment, setCommentModalOpen }) => {
     setIsLoading(true);
     console.log('fetching');
     try {
-      const response = await fetch(`/comments/reply/${post._id}`, {
+      const response = await fetch(`https://omigramapi.onrender.com/comments/reply/${post._id}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

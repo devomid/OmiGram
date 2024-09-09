@@ -85,7 +85,7 @@ const ChatRoom = ({ setOminnectModal, socket, pageIndicator, setPageIndicator })
           Authorization: `Bearer ${user.token}`
         }
       };
-      const { data } = await axios.get(`/msgs/${selectedChat._id}`, config);
+      const { data } = await axios.get(`https://omigramapi.onrender.com/msgs/${selectedChat._id}`, config);
       setMsgs(data);
 
     } catch (error) {
@@ -114,7 +114,7 @@ const ChatRoom = ({ setOminnectModal, socket, pageIndicator, setPageIndicator })
           }
         };
         setNewMsg('');
-        const { data } = await axios.post(`/msgs`, {
+        const { data } = await axios.post(`https://omigramapi.onrender.com/msgs`, {
           content: newMsg,
           chatId: selectedChat._id,
           /* post */

@@ -39,7 +39,7 @@ const NewChatModal = ({ newChatModal, setNewChatModal }) => {
             'Content-Type': 'application/json'
           }
         };
-        const { data } = await axios.get(`/user/search?search=${search}`, config)
+        const { data } = await axios.get(`https://omigramapi.onrender.com/user/search?search=${search}`, config)
 
         if (data.length < 1) {
           setIsLoading(false);
@@ -68,7 +68,7 @@ const NewChatModal = ({ newChatModal, setNewChatModal }) => {
           'Content-Type': 'application/json'
         }
       }
-      const { data } = await axios.post('/chats', { receiverId }, config);
+      const { data } = await axios.post('https://omigramapi.onrender.com/chats', { receiverId }, config);
       if (!chats.find((c) => c._id === data._id)) { setChats([data, ...chats]) };
       setSelectedChat(data);
       setIsLoading(false);
@@ -97,7 +97,7 @@ const NewChatModal = ({ newChatModal, setNewChatModal }) => {
         }
       };
 
-      const { data } = await axios.post('/chats/group', {
+      const { data } = await axios.post('https://omigramapi.onrender.com/chats/group', {
         name: groupName,
         users: JSON.stringify(selectedUsers.map((u) => u._id))
       }, config);

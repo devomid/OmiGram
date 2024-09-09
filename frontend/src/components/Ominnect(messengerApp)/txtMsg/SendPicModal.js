@@ -41,7 +41,7 @@ const SendPicModal = ({ sendPicModal, setSendPicModal, chatPic, newMsg, setNewMs
 
         setNewMsg('');
 
-        const response = await fetch(`/msgs/msgwithpic/${user.user._id}`, {
+        const response = await fetch(`https://omigramapi.onrender.com/msgs/msgwithpic/${user.user._id}`, {
           headers: {
             'Authorization': `Bearer ${user.token}`
           },

@@ -10,7 +10,7 @@ const PostDeleteModal = ({ post, deletePostOpen, setDeletePostOpen, fetchUserPos
 
   const handleDelete = async () => {
     setIsLoading(true)
-    const response = await fetch(`/posts/${post._id}`, {
+    const response = await fetch(`https://omigramapi.onrender.com/posts/${post._id}`, {
       headers: {
         'Authorization': `Bearer ${user.token}`
       },

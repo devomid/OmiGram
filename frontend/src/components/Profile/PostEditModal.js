@@ -18,7 +18,7 @@ const PostEditModal = ({ post, editPostOpen, setEditPostOpen, fetchUserPosts, se
     formData.append('userId', user.user._id);
     formData.append('postBody', postBody);
 
-    const response = await fetch(`/posts/${post._id}`, {
+    const response = await fetch(`https://omigramapi.onrender.com/posts/${post._id}`, {
       headers: {
         'Authorization': `Bearer ${user.token}`
       },
